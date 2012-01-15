@@ -8,8 +8,8 @@ class Drumkit
   
   def initialize
     @sounds = Hash.new
-    tempo = 80
-    lenght = 4
+    @tempo = 80
+    @lenght = 4
   end
   
   def load(drumkit_name)
