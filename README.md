@@ -5,14 +5,17 @@
 It just a simple drum machine that can also play loops but can be user interactively from Ruby console
 
 ## Installation
-
-Since irb can't use threads by default you must change your $HOME/.irb and add the following line:
-
-IRB.conf[:USE_READLINE] = false
  
-Also rythmic requires SDL installed.
+Rythmic requires SDL installed.
 
 To install on MacOSX you must run "brew install sdl sdl_mixer"
+
+Also, some versions of readline are blocking so if you experience sounds not being played you must add the following line to $HOME/.irb:
+
+	IRB.conf[:USE_READLINE] = false
+
+Unluckly then your history keys will stop working in irb
+
 
 ## Using rythmic
 
