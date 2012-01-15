@@ -4,7 +4,7 @@ require "rubygame"
 class Drumkit
   DRUMKIT_FOLDER = "drumkits"
   
-  attr_accesor :tempo, :lenght
+  attr_accessor :tempo, :lenght
   
   def initialize
     @sounds = Hash.new
