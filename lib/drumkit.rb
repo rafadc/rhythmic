@@ -6,10 +6,11 @@ class Drumkit
   
   attr_accessor :tempo, :lenght
   
-  def initialize
+  def initialize(drumkit_name = nil, tempo = 180, lenght = 4)
     @sounds = Hash.new
-    @tempo = 80
-    @lenght = 4
+    load drumkit_name unless drumkit_name.nil?
+    @tempo = tempo
+    @lenght = lenght
   end
   
   def load(drumkit_name)

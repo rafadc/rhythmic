@@ -22,10 +22,9 @@ You will be presented with a ruby console where you can start using the drum mac
 
 For example if you type the following
 
-	drums = Drumkit.new
-	drums.load "gmkit"
-	drums.pattern("kick",0,1)
-	drums.pattern("tom_hi",2)
+	drums = Drumkit.new "gmkit"
+	drums.pattern("kick", 0, 1)
+	drums.pattern("tom_hi", 2)
 	drums.play 4
 
 You'll here four times the pattern we just defined. The kick in the first and second beat and the tom in the third. The fourh beat will be on silence. 
@@ -33,14 +32,14 @@ You'll here four times the pattern we just defined. The kick in the first and se
 Then you can play with the tempo. If you do
 
 	drums.tempo = 200
-	drums.play
+	drums.play 4
 
 You'll hear your drums faster.
 
 You can also change the lenght of a loop. If you do
 
 	drums.lenght = 2
-	drums.play
+	drums.play 4
 
 You'll only hear kicks all the way since the loop ends in the second beat.
 
