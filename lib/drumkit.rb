@@ -20,7 +20,7 @@ class Drumkit
     }
   end
   
-  def pattern_for_instrument(instrument, *beats_to_play)
+  def pattern(instrument, *beats_to_play)
     @sounds[instrument][:beats] = beats_to_play
   end
   
