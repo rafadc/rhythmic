@@ -8,6 +8,8 @@ class Drumkit
   
   def initialize
     @sounds = Hash.new
+    tempo = 80
+    lenght = 4
   end
   
   def load(drumkit_name)
@@ -24,5 +26,19 @@ class Drumkit
   
   def remove_from_playing(instrument)
     @sounds_to_play.delete instrument
+  end
+  
+  def sounds_to_play_on_beat(beat_number)
+    @sounds.values.select {|sound| sound[:beats].nil? ? false : sound[:beats].include?(beat_number) }
+  end
+  
+  def play(repetitions=1)
+    seconds_between_beats = 60.0 / @tempo
+    repetitions.times do
+      @lenght.times do |beat|
+        sounds_to_play_on_beat(beat).each{ |sound_data| sound_data[:sound].play }
+        sleep seconds_between_beats
+      end
+    end
   end
 end
