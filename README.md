@@ -1,12 +1,12 @@
 # RMU personal project
 
-## Rythmic
+## Rhythmic
 
 It just a simple drum machine that can also play loops but can be user interactively from Ruby console
 
 ## Installation
  
-Rythmic requires SDL installed.
+Rhythmic requires SDL installed.
 
 To install on MacOSX you must run 
 
@@ -19,9 +19,9 @@ Also, some versions of readline are blocking so if you experience sounds not bei
 Unluckly then your history keys will stop working in irb
 
 
-## Using rythmic
+## Using rhythmic
 
-Rythmic is used through irb so one you've checked out rythmic code go to installation directory and type "irb"
+Rhythmic is used through irb so one you've checked out rythmic code go to installation directory and type "irb"
 
 Now, in irb prompt try the following to check that your installation was correct
 
@@ -34,7 +34,7 @@ You will be presented with a ruby console where you can start using the drum mac
 
 For example if you type the following
 
-    irb(main):001:0> require "./rythmic"
+    irb(main):001:0> require "./rhythmic"
     => true
     irb(main):002:0> drums = Drumkit.new "gmkit"
     [...]
@@ -66,7 +66,7 @@ You'll only hear kicks all the way since the loop ends in the second beat.
 
 ## Defining new drumkits
 
-Rythmic just fires samples located in drumkit folder. To create a new drumkit just create a new folder with the name of the drumkit. Inside it you must place a yaml file like the following
+Rhythmic just fires samples located in drumkit folder. To create a new drumkit just create a new folder with the name of the drumkit. Inside it you must place a yaml file like the following
 
     [{name : kick, file : clap_Dry_c.wav},
     {name : tom_hi, file : tom_Rock_mid.wav}]

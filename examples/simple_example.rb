@@ -1,4 +1,4 @@
-require "./rythmic"
+require "./rhythmic"
 
 drums = Drumkit.new "gmkit"
 drums.pattern("kick", 0, 1) 
