@@ -12,7 +12,7 @@ To install on MacOSX you must run "brew install sdl sdl_mixer"
 
 Also, some versions of readline are blocking so if you experience sounds not being played you must add the following line to $HOME/.irb:
 
-	IRB.conf[:USE_READLINE] = false
+  	IRB.conf[:USE_READLINE] = false
 
 Unluckly then your history keys will stop working in irb
 
@@ -26,13 +26,13 @@ Now, in irb prompt try the following to check that your installation was correct
     irb(main):001:0> load "examples/simple_example.rb"
     => true
 
-That should put some sound in your speakers or raise an error.
+That should put some sound in your speakers or raise an error in case SDL is not installed.
 
 You will be presented with a ruby console where you can start using the drum machine
 
 For example if you type the following
 
-    irb(main):001:0> require "rythmic"
+    irb(main):001:0> require "./rythmic"
     => true
     irb(main):002:0> drums = Drumkit.new "gmkit"
     [...]
