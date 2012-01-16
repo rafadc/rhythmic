@@ -2,7 +2,7 @@
 
 ## Rhythmic
 
-It just a simple drum machine that can also play loops but can be user interactively from Ruby console
+It is just a simple drum machine that can also play loops but can be used interactively from Ruby console
 
 ## Installation
  
