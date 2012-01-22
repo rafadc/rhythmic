@@ -9,7 +9,6 @@ class Sample
   def play
     Thread.new do
       @delays.each do |delay|
-        puts "Delayed #{delay}"
         sleep delay
         @sound.play
       end
