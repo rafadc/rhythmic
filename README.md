@@ -72,3 +72,10 @@ Rhythmic just fires samples located in drumkit folder. To create a new drumkit j
     {name : tom_hi, file : tom_Rock_mid.wav}]
 	
 That will look for "clap_Dry_c.wav" file in drumkit folder and assign it to "kick" so you can use it from "pattern" method. The same will be done for "tom_hi". At the moment WAV, OGG and MP3 samples are supported.
+
+## Sounds copyright
+
+I got some sounds to be used as examples. They are distributed under different licenses. Their copyright holders are:
+
+ * GmKit drumkit: The hydrogen team
+ * Hearbeat sample: Lionel Allorge
