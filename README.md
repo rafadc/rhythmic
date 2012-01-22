@@ -25,7 +25,7 @@ Rhythmic is used through irb so one you've checked out rythmic code go to instal
 
 Now, in irb prompt try the following to check that your installation was correct
 
-    irb(main):001:0> load "examples/simple_example.rb"
+    irb(main):001:0> load "examples/drumkit_example.rb"
     => true
 
 That should put some sound in your speakers or raise an error in case SDL is not installed.
