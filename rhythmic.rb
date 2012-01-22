@@ -1,3 +1,5 @@
+require "yaml"
+require "rubygame"
 require "./lib/drumkit"
 
 if defined?(Rubygame::Sound).nil?

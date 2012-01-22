@@ -1,6 +1,3 @@
-require "yaml"
-require "rubygame"
-
 class Drumkit
   DRUMKIT_FOLDER = "drumkits"
   
