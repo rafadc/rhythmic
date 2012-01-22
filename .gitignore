@@ -1,4 +1,6 @@
 bin
 .bundle
 *.swp
-sounds
+samples/*.wav
+samples/*.mp3
+samples/*.ogg
