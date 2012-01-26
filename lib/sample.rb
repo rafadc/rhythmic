@@ -1,4 +1,6 @@
 class Sample
+  include Loopable
+
   SAMPLES_FOLDER = "samples"
 
   def initialize(sample_name)

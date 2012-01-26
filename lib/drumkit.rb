@@ -1,4 +1,6 @@
 class Drumkit
+  include Loopable
+
   DRUMKIT_FOLDER = "drumkits"
 
   attr_accessor :tempo, :length
