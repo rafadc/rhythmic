@@ -27,19 +27,24 @@ class Drumkit
   end
 
   def play(repetitions=1)
-    Thread.new do
-      play_sync(repetitions)
+    @thread = Thread.new do
+      seconds_between_beats = 60.0 / @tempo
+      repetitions.times do
+        @length.times do |beat|
+          sounds_to_play_on_beat(beat).each { |sound_data| sound_data[:sound].play }
+          sleep seconds_between_beats
+        end
+      end
     end
   end
 
   def play_sync(repetitions = 1)
-    seconds_between_beats = 60.0 / @tempo
-    repetitions.times do
-      @length.times do |beat|
-        sounds_to_play_on_beat(beat).each { |sound_data| sound_data[:sound].play }
-        sleep seconds_between_beats
-      end
-    end
+    play(repetitions)
+    @thread.join
+  end
+
+  def stop
+    @thread.kill
   end
 
   private
