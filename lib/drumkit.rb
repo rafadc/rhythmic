@@ -1,13 +1,13 @@
 class Drumkit
   DRUMKIT_FOLDER = "drumkits"
 
-  attr_accessor :tempo, :lenght
+  attr_accessor :tempo, :length
 
-  def initialize(drumkit_name = nil, tempo = 180, lenght = 4)
+  def initialize(drumkit_name = nil, tempo = 180, length = 4)
     @sounds = Hash.new
     load drumkit_name unless drumkit_name.nil?
     @tempo = tempo
-    @lenght = lenght
+    @length = length
   end
 
   def load(drumkit_name)
@@ -35,7 +35,7 @@ class Drumkit
   def play_sync(repetitions = 1)
     seconds_between_beats = 60.0 / @tempo
     repetitions.times do
-      @lenght.times do |beat|
+      @length.times do |beat|
         sounds_to_play_on_beat(beat).each { |sound_data| sound_data[:sound].play }
         sleep seconds_between_beats
       end
