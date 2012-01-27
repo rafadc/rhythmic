@@ -1,9 +1,14 @@
 module Rhythmic
   module Loopable
     def loop
-      @thread = Thread.new do
-        play_sync while true
+      @loop_thread = Thread.new do
+        @looping = true
+        play_sync while @looping
       end
+    end
+
+    def stop_loop
+      @looping = false
     end
   end
 end
