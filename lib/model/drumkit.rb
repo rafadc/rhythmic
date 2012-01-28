@@ -13,6 +13,7 @@ module Rhythmic
     end
 
     def load(drumkit_name)
+      puts "Loading #{get_drumkit_loader.load(drumkit_name)}"
       @sounds = get_drumkit_loader.load(drumkit_name)
     end
 
