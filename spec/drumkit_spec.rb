@@ -23,13 +23,27 @@ describe "Playing sounds" do
     drumkit_loader
   end
 
-  it "should play if a single sound in pattern 0 set" do
+  let(:simple_drumkit) do
     drumkit = Rhythmic::Drumkit.new
+    drumkit.tempo = 10000
     drumkit.drumkit_loader = drumkit_loader
     drumkit.load "my drumkit"
-    drumkit.pattern("kick", 0, 0)
-    drumkit.play
+    drumkit
+  end
+
+  it "should play if a single sound in pattern 0 set" do
+    simple_drumkit.pattern("kick", 0, 0)
+    simple_drumkit.play
     @kick_sound.should_receive(:play)
+    wait_for_threads_to_finish
+  end
+
+  it "should play two sounds if set in pattern 0 set" do
+    simple_drumkit.pattern("kick", 0, 0)
+    simple_drumkit.pattern("tom", 0, 1)
+    simple_drumkit.play
+    @kick_sound.should_receive(:play)
+    @tom_sound.should_receive(:play)
     wait_for_threads_to_finish
   end
 end
