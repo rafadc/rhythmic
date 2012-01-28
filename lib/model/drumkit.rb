@@ -2,12 +2,10 @@ module Rhythmic
   class Drumkit
     include Rhythmic::Loopable
 
-    DRUMKIT_FOLDER = "drumkits"
-
     attr_accessor :tempo, :length
+    attr_writer :drumkit_loader
 
     def initialize(drumkit_name = nil, tempo = 180, length = 4)
-      @sounds = Hash.new
       @patterns = []
       load drumkit_name unless drumkit_name.nil?
       @tempo = tempo
@@ -15,11 +13,7 @@ module Rhythmic
     end
 
     def load(drumkit_name)
-      drumkit_files = YAML::load(File.open("#{DRUMKIT_FOLDER}/#{drumkit_name}/#{drumkit_name}.yaml"))
-      drumkit_files.each do |sounds_file_data|
-        @sounds[sounds_file_data["name"]] =
-            SoundProvider.load("#{DRUMKIT_FOLDER}/#{drumkit_name}/#{sounds_file_data['file']}")
-      end
+      @sounds = get_drumkit_loader.load(drumkit_name)
     end
 
     def pattern(instrument, pattern_number, *beats_to_play)
@@ -60,6 +54,10 @@ module Rhythmic
         end
         sleep seconds_between_beats
       end
+    end
+
+    def get_drumkit_loader
+      @drumkit_loader ||= DrumkitLoaderYaml.new
     end
   end
 end
