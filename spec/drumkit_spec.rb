@@ -32,18 +32,29 @@ describe "Playing sounds" do
   end
 
   it "should play if a single sound in pattern 0 set" do
-    simple_drumkit.pattern("kick", 0, 0)
-    simple_drumkit.play
+    drumkit = simple_drumkit
+    drumkit.pattern("kick", 0, 0)
+    drumkit.play
     @kick_sound.should_receive(:play)
     wait_for_threads_to_finish
   end
 
   it "should play two sounds if set in pattern 0 set" do
-    simple_drumkit.pattern("kick", 0, 0)
-    simple_drumkit.pattern("tom", 0, 1)
-    simple_drumkit.play
+    drumkit = simple_drumkit
+    drumkit.pattern("kick", 0, 0)
+    drumkit.pattern("tom", 0, 1)
+    drumkit.play
     @kick_sound.should_receive(:play)
     @tom_sound.should_receive(:play)
+    wait_for_threads_to_finish
+  end
+
+  it "should not play sound if not scheduled" do
+    drumkit = simple_drumkit
+    drumkit.pattern("kick", 0, 0)
+    drumkit.play
+    @kick_sound.should_receive(:play)
+    @tom_sound.should_not_receive(:play)
     wait_for_threads_to_finish
   end
 end
