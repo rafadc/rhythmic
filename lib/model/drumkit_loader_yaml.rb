@@ -5,7 +5,7 @@ module Rhythmic
     DRUMKIT_FOLDER = "drumkits"
 
     def load(drumkit_name)
-      sounds=Hash.new
+      sounds={}
       drumkit_files = YAML::load(File.open("#{DRUMKIT_FOLDER}/#{drumkit_name}/#{drumkit_name}.yaml"))
       drumkit_files.each do |sounds_file_data|
         sounds[sounds_file_data["name"]] =
