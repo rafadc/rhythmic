@@ -5,7 +5,7 @@ module Rhythmic
     SAMPLES_FOLDER = "samples"
 
     def initialize(sample_name)
-      @sound = Rubygame::Sound.load("#{SAMPLES_FOLDER}/#{sample_name}")
+      @sound = SoundProvider.load("#{SAMPLES_FOLDER}/#{sample_name}")
       @delays = [0]
     end
 

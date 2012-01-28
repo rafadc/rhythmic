@@ -1,6 +1,10 @@
 require "yaml"
 require "rubygame"
+
 require "./lib/loopable"
+
+require "./lib/sound_providers/sound_provider"
+require "./lib/sound_providers/rubygame_provider"
 
 require "./lib/model/drumkit"
 require "./lib/model/sample"
