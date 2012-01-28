@@ -14,4 +14,4 @@ if defined?(Rubygame::Sound).nil?
   exit
 end
 
-
+at_exit {(Thread.list - [Thread.current]).each(&:join)}
