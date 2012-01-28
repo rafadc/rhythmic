@@ -41,7 +41,8 @@ module Rhythmic
 
     private
     def sounds_to_play_on_beat(pattern_number, beat_number)
-      patterns_with_beat = @patterns[pattern_number].select do |k, v|
+      pattern = @patterns[pattern_number].nil? ? {} : @patterns[pattern_number]
+      patterns_with_beat = pattern.select do |k, v|
         v.nil? ? false : v.include?(beat_number)
       end
       patterns_with_beat.keys
