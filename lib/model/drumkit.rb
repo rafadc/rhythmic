@@ -16,7 +16,7 @@ module Rhythmic
       @sounds = get_drumkit_loader.load(drumkit_name)
     end
 
-    def pattern(instrument, pattern_number, *beats_to_play)
+    def pattern(instrument, pattern_number, beats_to_play)
       @patterns[pattern_number] = Hash.new if @patterns[pattern_number].nil?
       @patterns[pattern_number][instrument] = beats_to_play
     end
@@ -37,6 +37,10 @@ module Rhythmic
 
     def stop
       @thread.kill
+    end
+
+    def copy_pattern(source, target)
+      @patterns[target] = @patterns[source].dup
     end
 
     private

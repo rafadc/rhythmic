@@ -33,7 +33,7 @@ describe "Playing sounds" do
 
   it "should play if a single sound in pattern 0 set" do
     drumkit = simple_drumkit
-    drumkit.pattern("kick", 0, 0)
+    drumkit.pattern("kick", 0, [0])
     drumkit.play
     @kick_sound.should_receive(:play)
     wait_for_threads_to_finish
@@ -41,8 +41,8 @@ describe "Playing sounds" do
 
   it "should play two sounds if set in pattern 0 set" do
     drumkit = simple_drumkit
-    drumkit.pattern("kick", 0, 0)
-    drumkit.pattern("tom", 0, 1)
+    drumkit.pattern("kick", 0, [0])
+    drumkit.pattern("tom", 0, [1])
     drumkit.play
     @kick_sound.should_receive(:play)
     @tom_sound.should_receive(:play)
@@ -51,7 +51,7 @@ describe "Playing sounds" do
 
   it "should not play sound if not scheduled" do
     drumkit = simple_drumkit
-    drumkit.pattern("kick", 0, 0)
+    drumkit.pattern("kick", 0, [0])
     drumkit.play
     @kick_sound.should_receive(:play)
     @tom_sound.should_not_receive(:play)
@@ -60,8 +60,8 @@ describe "Playing sounds" do
 
   it "should play all patterns even if not mentioned " do
     drumkit = simple_drumkit
-    drumkit.pattern("kick", 0, 0)
-    drumkit.pattern("tom", 2, 1)
+    drumkit.pattern("kick", 0, [0])
+    drumkit.pattern("tom", 2, [1])
     drumkit.play
     @kick_sound.should_receive(:play)
     @tom_sound.should_receive(:play)
