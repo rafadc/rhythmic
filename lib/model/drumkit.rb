@@ -16,10 +16,10 @@ module Rhythmic
 
     def load(drumkit_name)
       drumkit_files = YAML::load(File.open("#{DRUMKIT_FOLDER}/#{drumkit_name}/#{drumkit_name}.yaml"))
-      drumkit_files.each { |sounds_file_data|
+      drumkit_files.each do |sounds_file_data|
         @sounds[sounds_file_data["name"]] =
             SoundProvider.load("#{DRUMKIT_FOLDER}/#{drumkit_name}/#{sounds_file_data['file']}")
-      }
+      end
     end
 
     def pattern(instrument, pattern_number, *beats_to_play)
@@ -47,7 +47,7 @@ module Rhythmic
 
     private
     def sounds_to_play_on_beat(pattern_number, beat_number)
-      patterns_with_beat = @patterns[pattern_number].select do |k,v|
+      patterns_with_beat = @patterns[pattern_number].select do |k, v|
         v.nil? ? false : v.include?(beat_number)
       end
       patterns_with_beat.keys
