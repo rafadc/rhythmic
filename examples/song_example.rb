@@ -1,4 +1,4 @@
-require "./rhythmic"
+require "./lib/rhythmic"
 
 demo_song = Rhythmic::Song.new
 

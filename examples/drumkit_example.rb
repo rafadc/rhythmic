@@ -1,4 +1,4 @@
-require "./rhythmic"
+require "./lib/rhythmic"
 
 drums = Rhythmic::Drumkit.new "gmkit"
 drums.pattern("kick", 0, [0, 1])
