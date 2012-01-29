@@ -1,6 +1,6 @@
 require "rspec"
 
-require_relative("../rhythmic")
+require_relative("../lib/rhythmic")
 
 describe "Song playing" do
 

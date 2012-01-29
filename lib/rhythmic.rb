@@ -1,15 +1,15 @@
 require "yaml"
 require "rubygame"
 
-require "./lib/loopable"
+require "./lib/rhythmic/loopable"
 
-require "./lib/sound_providers/sound_provider"
-require "./lib/sound_providers/rubygame_provider"
+require "./lib/rhythmic/sound_provider"
+require "./lib/rhythmic/rubygame_provider"
 
-require "./lib/model/drumkit_loader_yaml"
-require "./lib/model/drumkit"
-require "./lib/model/sample"
-require "./lib/model/song"
+require "./lib/rhythmic/drumkit_loader_yaml"
+require "./lib/rhythmic/drumkit"
+require "./lib/rhythmic/sample"
+require "./lib/rhythmic/song"
 
 if defined?(Rubygame::Sound).nil?
   puts "Couldn't load SDL and SDL_Mixer. Are they correcly installed?. Please check https://github.com/rafadc/rythmic for installation instructions."

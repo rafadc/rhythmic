@@ -1,6 +1,6 @@
 require "rspec"
 
-require_relative("../rhythmic")
+require_relative("../lib/rhythmic")
 
 def wait_for_threads_to_finish
   (Thread.list - [Thread.current]).each(&:join)
