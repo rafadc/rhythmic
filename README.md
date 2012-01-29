@@ -9,9 +9,18 @@ interactively from Ruby console
  
 Rhythmic requires SDL installed.
 
-To install on MacOSX you must run 
+To install on MacOSX through Homebrew you must run
 
     brew install sdl sdl_mixer
+
+You can also use Macports. You need the following packages:
+
+    libsdl_mixer
+
+    [optional - just issued warnings]
+    libsdl_gfx
+    libsdl_image
+    libsdl_ttf
 
 Also, some versions of readline are blocking so if you experience sounds not
 being played you must add the following line to $HOME/.irb:
