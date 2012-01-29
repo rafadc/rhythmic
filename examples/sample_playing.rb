@@ -1,6 +1,6 @@
 require "./rhythmic"
 
-heart = Rhythmic::Sample.new("YourInOrYourOut.wav")
-heart.play_after(0,3,3,3)
-heart.play
+your_in = Rhythmic::Sample.new("YourInOrYourOut.wav")
+your_in.play_after(0,3,3,3)
+your_in.play
 
