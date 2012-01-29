@@ -30,5 +30,9 @@ module Rhythmic
     def play_after(*seconds)
       @delays = seconds
     end
+
+    def volume=(value)
+      @sound.volume = value
+    end
   end
 end
