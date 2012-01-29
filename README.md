@@ -44,7 +44,7 @@ machine
 
 For example if you type the following
 
-    irb(main):001:0> require "./rhythmic"
+    irb(main):001:0> require "./lib/rhythmic"
     => true
     irb(main):002:0> drums = Drumkit.new "gmkit"
     [...]
@@ -86,7 +86,7 @@ You'll only hear kicks all the way since the loop ends in the second beat.
 
 You can just load some samples alone and fire them at will. Try doing:
 
-    irb(main):001:0> require "./rhythmic"
+    irb(main):001:0> require "./lib/rhythmic"
     [...]
     irb(main):002:0> your_in = Rhythmic::Sample.new("YourInOrYourOut.wav")
     [...]
