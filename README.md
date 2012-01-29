@@ -1,4 +1,4 @@
-# RMU personal project
+# Mendicant University personal project
 
 ## Rhythmic
 
