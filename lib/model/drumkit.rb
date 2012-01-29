@@ -40,7 +40,7 @@ module Rhythmic
     end
 
     def copy_pattern(source, target)
-      @patterns[target] = @patterns[source].dup
+      @patterns[target] = @patterns[source].dup unless @patterns[source].nil?
     end
 
     private
